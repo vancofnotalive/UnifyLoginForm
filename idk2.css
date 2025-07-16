@@ -3,7 +3,9 @@
       padding: 0 !important;
       flex-shrink: 0 !important;
     }
-
+:root {
+  --link-color: rgb(54, 54, 54);;
+}
     a {
       text-decoration: none;
     }
@@ -193,7 +195,7 @@
     align-items: center;
 }
 .form-content-input---aside a {
-    color: rgb(116, 116, 116);
+    color: var(--link-color);
     
 }
 .form-content-input---aside a:hover {
@@ -364,7 +366,7 @@ justify-content: start;
   justify-content: center;
 }
 .signup-instead a {
-  color: rgb(73, 73, 73);
+  color: var(--link-color);
 }
 .signup-instead a:hover {
   text-decoration: underline;
@@ -417,7 +419,7 @@ input:focus {
   position: absolute;
   right: 0;
   bottom: 0;
-  color: rgb(116, 116, 116);
+  color: var(--link-color);
   z-index: +1;
   display: flex;
   align-items: flex-end;
@@ -441,7 +443,7 @@ input:focus {
   justify-content: center;
 }
 .form-btns---phone a {
-  color: rgb(116, 116, 116);
+  color: var(--link-color);
   text-align: center;
 }
 .form-btns---phone a span {

@@ -1,0 +1,630 @@
+  * {
+      margin: 0 !important;
+      padding: 0 !important;
+      flex-shrink: 0 !important;
+    }
+
+    a {
+      text-decoration: none;
+    }
+    h1, h2 , h3 , h4 , h5 ,h6 , strong , span , p , a {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    if-block {
+      display: none;
+    }
+
+   /* Phones (Portrait) */
+@media (max-width: 480px) {
+  if-block[device*="phone"] {
+    display: contents;
+  }
+  .form-header {
+    justify-content: center;
+  }
+  .form-img {
+    position: relative !important;
+  }
+  .form-img img {
+    width: 50% !important;
+  }
+}
+
+/* Phones (Landscape) and Small Tablets */
+@media (min-width: 481px) and (max-width: 768px) {
+  if-block[device*="tab"] {
+    display: contents;
+  }
+}
+
+/* Tablets (Landscape) and Small Laptops */
+@media (min-width: 769px) and (max-width: 1024px) {
+  if-block[device*="lap"] {
+    display: contents;
+  }
+}
+
+/* Desktops */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  if-block[device*="pc"] {
+    display: contents;
+  }
+}
+
+/* Large Desktops / TVs */
+@media (min-width: 1441px) {
+  if-block[device*="tv"] {
+    display: contents;
+  }
+}
+
+    body {
+      display: flex;
+      overflow: hidden;
+      width: 100dvw;
+    }
+.background-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+.background-img img {
+  filter: blur(0.5dvh);
+}
+.form {
+  position: fixed;
+  top: 50%;
+  background-color: rgba(212, 212, 212, 0.7);
+  left: 50%;
+  transform: translate(-50% , -50%);
+  
+  border-radius: 1dvh;
+  z-index: +1;
+}
+  .form-header {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    display: flex;
+    
+    justify-content: center;
+    
+  }
+ .form-content {
+    display: flex;
+    flex-direction: column;
+  
+ }
+ .form-img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+ }
+ .form-img img {
+  width: 80%;
+  user-select: none;
+ }
+ .form-content-input {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    
+ }
+ .form-content-input main {
+    display: flex;
+    align-items: center;
+    border-bottom: 0.1dvh solid black;
+ }
+ .form-content-input main span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 0.1dvh solid rgb(0, 0, 0);
+    cursor: pointer;
+ }
+ .form-content-input-main span i {
+    color: rgb(51, 51, 51);
+ }
+ .form-content-input h1 {
+    color: rgb(51, 51, 51);
+ }
+ 
+.form-content-input-main input {
+    height: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border-bottom: 0.1dvh solid black;
+    
+}
+.form-content-input h2 {
+    display: flex;
+    
+    align-items: start;
+    width: 100%;
+    color: rgb(185, 0, 0);
+    scale: 0;
+    overflow: hidden;
+    align-content: start;
+}
+.form-content-input h2 i {
+    height: fit-content;
+    width: fit-content;
+    
+}
+.form-content-input--error h2{
+    display: flex;
+}
+.form-content-input h2 span {
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+}
+.form-content-input h2 strong {
+    font-weight: 400;
+
+    display: flex;
+    
+}
+
+@keyframes horizontal-shaking {
+  0% { transform: translateX(0) translateY(-5%) }
+  25% { transform: translateX(5px) }
+  50% { transform: translateX(-5px) }
+  75% { transform: translateX(5px) }
+  100% { transform: translateX(0) translateY(0%)}
+}
+.form-content-input aside {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.form-content-input---aside a {
+    color: rgb(116, 116, 116);
+    
+}
+.form-content-input---aside a:hover {
+   text-decoration: underline;
+    
+}
+.form-content-login-button {
+    position: relative;
+    background-color: rgb(0, 60, 255);
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+    transition: 200ms;
+    overflow: hidden;
+}
+.form-content-login-button span {
+    font-weight: 700;
+    
+}
+.form-content-login-button i {
+    
+    
+}
+.form-content-login-button main {
+position: absolute;
+bottom: 0;
+height: 100%;
+width: 100%;
+display: flex;
+align-items: flex-end;
+justify-content: start;
+
+
+}
+.form-content-login-button main section {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(-50% , -50%) rotate(-45deg);
+    height: 100%;
+    width: 100%;
+    background-color: rgb(0, 47, 202);
+    
+}
+
+.form-content-login-button:hover main section:nth-child(1) {
+    transform: translate(-45% , -50%) rotate(-45deg);
+    
+}
+.form-content-login-button:hover  {
+    transform: scale(1.030);
+    background-color: rgb(32, 84, 255);
+}
+.form-content-login-button-processing:hover main section:nth-child(1) {
+    transform: translate(-50% , -50%) rotate(0deg);
+    
+}
+.form-content-login-button-processing:hover  {
+    transform: scale(1.030);
+    background-color: rgb(32, 84, 255);
+}
+
+.form-content-login-button * {
+    transition: 200ms;
+}
+
+.form-content-login-button-processing main::after {
+    content: "Processing";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    color: black;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    animation: loginBtnText 10s infinite linear;
+}
+.form-content-login-button-processing {
+    background-color: transparent;
+}
+.form-content-login-button-processing main section {
+  position: absolute;
+  transform: translate(-50%, -50%) rotate(0);
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(280deg, rgb(0, 60, 255), rgb(255, 255, 255), rgb(0, 60, 255));
+  background-size: 400% 100%;
+  
+  animation: loginLoading 10s infinite linear;
+  color: white;
+  text-align: center;
+  line-height: 50px;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+@keyframes loginLoading {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+      background-position: 400% 400%;
+    }
+}
+@keyframes loginBtnText {
+  0% {
+    color: white;
+  }
+  50% {
+      color: rgb(0, 102, 255);
+    }
+  100% {
+      color: white;
+    }
+}
+
+
+.login-options {
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.login-option {
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  border: 0.1dvh solid rgb(175, 175, 175);
+  cursor: pointer;
+  border-radius: 1dvh;
+}
+.login-option span {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+.login-option span img {
+  width: 100%;
+}
+.login-option h1 {
+  
+}
+.login-option---facebook {
+  background-color: rgb(0, 54, 136) !important;
+}
+.login-option---facebook h1 {
+  color: white;
+}
+.login-option * {
+  transition: 200ms;
+}
+.login-option:hover * {
+  transform: translate(5%);
+}
+.login-option:hover {
+  filter: brightness(120%);
+}
+.signup-instead {
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.signup-instead a {
+  color: rgb(73, 73, 73);
+}
+.signup-instead a:hover {
+  text-decoration: underline;
+}
+.form-content-input--phone {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+.form-content-input--phone main {
+  display: flex;  
+  
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 0.1dvh solid black;
+}
+.form-content-input--phone section {
+  
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: rgb(185, 0, 0);
+  scale: 0;
+  
+}
+.form-content-input--phone section i{
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+.form-content-input--phone main input {
+  height: 100%;
+  border: none;
+  background-color: transparent;
+  
+}
+.form-content-input--phone main span {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+input:focus {
+  outline: none;
+}
+.form-content-input--phone a {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: rgb(116, 116, 116);
+  z-index: +1;
+  display: flex;
+  align-items: flex-end;
+  
+}
+.form-btns---phone {
+  display: flex;
+  width: 95%;
+  align-items: center;
+  justify-content: space-between;
+  align-self: center;
+}
+.form-btns---phone button {
+  position: relative;
+  background-color: rgb(0, 54, 136);
+  color: white;
+  border: none;
+  border-radius: 1dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form-btns---phone a {
+  color: rgb(116, 116, 116);
+  text-align: center;
+}
+.form-btns---phone a span {
+  color: rgb(0, 54, 136);
+}
+.form-login-options---phone {
+  
+  display: flex;
+  align-items: center;
+align-self: center;
+justify-content: space-between;
+}
+.form-login-options---phone button {
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex;
+  flex-direction: column;
+  border: none;
+  background-color: white;
+  border-radius: 1dvh;
+}
+.form-login-options---phone button main {
+  
+  display: flex;
+  align-items: center;
+}
+.form-login-options---phone button main h1{
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form-login-options---phone button main span img {
+  
+flex-shrink: 0 !important;
+flex-grow: 0 !important;
+}
+.form-login-options---phone button main span {
+  display: flex;
+  align-items: center;  
+justify-content: center;
+  
+}
+.form-login-options---phone-btn h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form-login-options---phone-btn---facebook {
+  background-color: rgb(0, 102, 255) !important;
+}
+.form-login-options---phone-btn---facebook * {
+  color: white;
+}
+.phone-login-processing-container {
+  display: flex;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to right, rgb(0, 195, 255) , rgb(0, 60, 255));
+  
+  align-items: center;
+  justify-content: center;
+  border-radius: 1dvh;
+  animation:  suddleBg 2s infinite;
+  background-position: 0% 0%;
+  background-size: 100% 100%;
+  transform: scale(0);
+}
+@keyframes suddleBg {
+  0% {
+ background-position: 0% 0%;
+     background-size: 100% 100%;
+  }
+  50% {
+     background-position: 100% 0%;
+     background-size: 200% 200%;
+  }
+  100% {
+     background-position: 0% 0%;
+     background-size: 100% 100%;
+  }
+}
+/* this is your .loader-container */
+.phone-login-processing-container main {
+    position: relative;
+      
+      left: 0%;
+      
+    
+}
+    .phone-login-processing-container main span {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      padding: 0.5vmin;
+      background: linear-gradient(
+  0deg,
+  #ffffff,
+  #e0f7ff,
+  #00b7ff,
+  #4a00e0,
+  #8e2de2
+);
+
+      background-size: 200% 200%;
+      animation: rotate 2s linear infinite;
+      box-sizing: border-box;
+    }
+
+    .phone-login-processing-container main::before {
+      position: absolute;
+      content: '';
+      display: block;
+      width: 50%;
+      height: 50%;
+       /* Inner background color */
+      border-radius: 50%;
+    }
+
+    .phone-login-processing-container main .inner-circle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%;
+      height: 80%;
+      border-radius: 50%;
+      background: linear-gradient(45deg, rgb(0, 174, 255), rgb(0, 255, 255));
+      background-size: 200% 200%;
+      animation: pulse 1.5s ease-in-out infinite, gradientShift 3s linear infinite;
+    }
+
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: translate(-50%, -50%) scale(1);
+      }
+      50% {
+        transform: translate(-50%, -50%) scale(1.1);
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(1);
+      }
+
+    }
+
+    @keyframes gradientShift {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+
+    }
+    .phone-login-processing .phone-login-processing-container {
+      transform: scale(1);
+    }
+
+
+ input:-webkit-autofill {
+  background-color: transparent !important;
+  -webkit-box-shadow: 0 0 0 1000px transparent inset !important; /* match your input bg */
+  -webkit-text-fill-color: #000 !important;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+input:-moz-autofill {
+  box-shadow: 0 0 0 1000px transparent inset !important;
+  -moz-text-fill-color: #000 !important;
+}

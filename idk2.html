@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Device-Based Layout</title>
+  <link rel="stylesheet" href="./idk2.css">
+  
+  <style>
+  
+  </style>
+</head>
+<body class="page">
+  
+  
+    <section class="form" ds="height: .page_H / 1.1; width: .page_W - ( .page_W  - (.page_W / 1.1));">
+<if-block device="pc || tab || lap || tv">
+  <section class="form-header" ds="height: .form_H / 4; width: .form_W / 2;">
+    <img ds="max-height: .form-header_H; width: .form_W / 4;" class="unify-logo" src="https://i.postimg.cc/3wRXXvyy/blue-upscalemedia-transformed.png" alt="" >
+  </section>
+</if-block>
+
+<if-block device="phone">
+  <section class="form-header" ds="height: .form_H / 6;">
+    <!-- <img ds="max-height: .form-header_H; width: .form_W / 1.1;" src="https://i.postimg.cc/P5CxRDHf/upscalemedia-transformed-removebg-preview.png" alt="" > -->
+    <move ele=".unify-logo" ds="max-height: .form-header_H; width: .form_W / 1.5;" style="align-self: center;">
+
+    </move>
+  </section>
+</if-block>
+<if-block device="pc || tab || lap || tv">
+
+  <section class="form-content" ds="width: .form_W / 2; height: .form_H - .form-header_H;">
+      <section id="email" class="form-content-input " ds="width: .form-content_W / 1.1; height: .form-content_H / 4;">
+          <h1 class="form-content-input---h1" ds="fs: (.form-content-input_H + .form-content-input_W) / 50">
+            </h1>
+          <main class="form-content-input-main" ds="height: .form-content-input_H / 3; width: .form-content-input_W;">
+            <span ds="width: .form-content-input-main_W / 10; height: .form-content-input-main_H;" onclick="changeInput(this)" inputType="both" >
+              <i ds="fs: (.form-content-input-main_H + .form-content-input-main_W) / 30;" class="fa-solid fa-user"></i></span>
+            <input host="email" placeholder="Email address or username" type="email" ds="width: .form-content-input-main_W - (.form-content-input-main_W / 10); fs: (.form-content-input-main_H + .form-content-input-main_W) / 40;">
+          </main>
+          <h2 id="errorMessage" class="form-content-input---h2" ds="height: .form-content-input_H - (.form-content-input---h1_H + .form-content-input-main_H);">
+            
+              <i class="fa-solid fa-xmark" ds="fs: (.form-content-input---h2_H + .form-content-input---h2_W) / 40; "></i> 
+          <strong ds="fs: (.form-content-input---h2_H + .form-content-input---h2_W) / 50; max-height: .form-content-input---h2_H; marginL: (.form-content-input---h2_H + .form-content-input---h2_W) / 100 !i;">Error message goes here</strong>
+          </h2>
+        </section>
+    <section id="password" class="form-content-input" ds="width: .form-content_W / 1.1; height: .form-content_H / 4;">
+        <h1 class="form-content-input---h1" ds="fs: (.form-content-input_H + .form-content-input_W) / 50">
+         Password</h1>
+        <main class="form-content-input-main" ds="height: .form-content-input_H / 3; width: .form-content-input_W;">
+          <span ds="width: .form-content-input-main_W / 10; height: .form-content-input-main_H;" >
+            <i ds="fs: (.form-content-input-main_H + .form-content-input-main_W) / 30;" class="fa-solid fa-key"></i></span>
+          <input host="password" placeholder="..." type="password" ds="width: .form-content-input-main_W - (.form-content-input-main_W / 10); fs: (.form-content-input-main_H + .form-content-input-main_W) / 40;">
+        </main>
+        <aside class="form-content-input---aside" ds="height: (.form-content-input_H - (.form-content-input---h1_H + .form-content-input-main_H)) / 2; width: .form-content-input_W;">
+          <a href="" ds="fs: (.form-content-input---aside_H + .form-content-input---aside_W) / 50;">Forgot password?</a>
+          
+        </aside>
+        <h2 id="errorMessage" class="form-content-input---h2" ds="height: (.form-content-input_H - (.form-content-input---h1_H + .form-content-input-main_H)) / 2;">
+          
+            <i class="fa-solid fa-xmark" ds="fs: (.form-content-input---h2_H + .form-content-input---h2_W) / 40; "></i> 
+        <strong ds="fs: (.form-content-input---h2_H + .form-content-input---h2_W) / 50; max-height: .form-content-input---h2_H; marginL: (.form-content-input---h2_H + .form-content-input---h2_W) / 100 !i;">Error message goes here</strong>
+        </h2>
+      </section>
+   <section onclick="loginUniversal('processing')" class="form-content-login-button form-content-login-button-selecter" ds="
+   height: .form-content_H - (.form-content-input_H * 3.6);
+    width: .form-content_W / 3;
+    border-radius: .form-content_H / 40;">
+    
+      <i class="fa-solid fa-right-to-bracket" ds="
+      fs: (.form-content-login-button_H + .form-content-login-button_W) / 15;
+      marginR: (.form-content-login-button_H + .form-content-login-button_W) / 30 !i;"></i>
+      <span ds="fs: (.form-content-login-button_H + .form-content-login-button_W) / 15;">Login</span>
+      <main>
+        <section></section>
+     
+      </main>
+   </section>
+
+
+    <section class="login-options" ds="height: (.form-content_H - ((.form-content-input_H * 2) + .form-content-login-button_H)) / 2 ;
+    width: .form-content_W;">
+       <section onclick="loginGoogle()" class="login-option" ds="height: .login-options_H / 2; width: .login-options_W / 2.5;">
+        <span class="login-option--span" ds="width: ($t$.login-option_W + $t$.login-option_H) / 6;">
+          <img ds="width: ($t$.login-option--span_W + $t$.login-option--span_H) / 4;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/768px-Google_%22G%22_logo.svg.png" alt="" srcset=""></span>
+        <h1 ds="width: ($t$.login-option_W - $t$.login-option--span_W) / 1.5; fs: ($t$.login-option_W - $t$.login-option--span_W) / 20; ">Login with google</h1>
+       </section>
+       <section onclick="loginFacebook()" class="login-option login-option---facebook" ds="height: .login-options_H / 2; width: .login-options_W / 2.5;">
+        <span class="login-option--span" ds="width: ($t$.login-option_W + $t$.login-option_H) / 6;">
+          <img ds="width: ($t$.login-option--span_W + $t$.login-option--span_H) / 4;" src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Facebook_Logo_2023.png" alt="" srcset=""></span>
+        <h1 ds="width: ($t$.login-option_W - $t$.login-option--span_W) / 1.5; fs: ($t$.login-option_W - $t$.login-option--span_W) / 20; ">Login with Facebook</h1>
+       </section>
+    </section>
+    <section class="signup-instead" ds="height: .form-content_H - (.form-content-input_H * 2 + .form-content-login-button_H +  .login-options_H);
+    width: .form-content_W / 1.1; ">
+      <a href="" ds="fs: (.signup-instead_H + .signup-instead_W) / 50;">Don’t have an account? Create one now.</a>
+    </section>
+    
+  </section>
+  <section class="form-img" ds="width: .form_W / 2; height: .form_H;">
+    <img src="https://i.postimg.cc/KYWnMjmL/image-removebg-preview.png" alt="" ds="max-height: .form-img_H;" srcset="">
+  </section>
+</if-block>
+<if-block device="phone">
+  <section class="form-container">
+
+    <section class="form-content" ds="width: .form_W; height: (.form_H - .form-header_H) / 1.5;">
+      
+           <section class="form-content-input--phone" id="email" ds="width: .form-content_W / 1.1; height: .form-content_H / 4;">
+           <main ds="height: $t$.form-content-input--phone_H / 1.5; width: $t$.form-content-input--phone_W;">
+            <span onclick="changeInput(this)" inputType="both" ds="fs: ($t$.form-content-input--phone@main_H + $t$.form-content-input--phone@main_W) / 15;
+            height:  $t$.form-content-input--phone@main_H;
+            width: $t$.form-content-input--phone@main_W / 7;"><i class="fa-solid fa-user"></i></span>
+          <input connect="email" placeholder="Email or username" type="email" 
+          ds="width: $t$.form-content-input--phone@main_W - ($t$.form-content-input--phone@main_W / 7);
+          fs: ($t$.form-content-input--phone@main_H + $t$.form-content-input--phone@main_W) / 25;">
+       
+          </main>
+          <section id="errorMessage" ds="height: $t$.form-content-input--phone_H * 0.5;">
+            <i ds="fs: ($t$.form-content-input--phone@section_H + $t$.form-content-input--phone@section_W) / 20;
+            width: $t$.form-content-input--phone@main@span_W;" class="fa-solid fa-xmark"></i>
+            <strong ds="fs: ($t$.form-content-input--phone@section_H + $t$.form-content-input--phone@section_W) / 30;
+            width: $t$.form-content-input--phone@main@input_W;">Error message goes here</strong>
+          </section>
+    </section>
+           <section class="form-content-input--phone" id="password" ds="width: .form-content_W / 1.1; height: .form-content_H / 4;">
+           <main ds="height: $t$.form-content-input--phone_H / 1.5; width: $t$.form-content-input--phone_W;">
+            <span ds="fs: ($t$.form-content-input--phone@main_H + $t$.form-content-input--phone@main_W) / 15;
+            height:  $t$.form-content-input--phone@main_H;
+            width: $t$.form-content-input--phone@main_W / 7;"><i class="fa-solid fa-key"></i></span>
+          <input connect="password" placeholder="Password" type="password" 
+          ds="width: $t$.form-content-input--phone@main_W - ($t$.form-content-input--phone@main_W / 7);
+          fs: ($t$.form-content-input--phone@main_H + $t$.form-content-input--phone@main_W) / 25;">
+       
+          </main>
+          
+          <section id="errorMessage" ds="height: $t$.form-content-input--phone_H * 0.5;">
+            <i ds="fs: ($t$.form-content-input--phone@section_H + $t$.form-content-input--phone@section_W) / 20;
+            width: $t$.form-content-input--phone@main@span_W;" class="fa-solid fa-xmark"></i>
+            <strong ds="fs: ($t$.form-content-input--phone@section_H + $t$.form-content-input--phone@section_W) / 30;
+            width: $t$.form-content-input--phone@main@input_W;">Error message goes here</strong>
+          </section>
+          <a href="" ds="fs: ($t$.form-content-input--phone@section_H + $t$.form-content-input--phone@section_W) / 30;
+          height: $t$.form-content-input--phone@section_H;">Forgot password?</a>
+    </section>
+
+    <section class="form-btns---phone" ds="
+    height: (.form-content_H - (.form-content-input--phone_H * 2.5)) / 2">
+    <a href="" ds="
+    max-height: .form-btns---phone_H;
+     width: .form-btns---phone_W / 2;
+     fs: (.form-btns---phone_H + .form-btns---phone_W) / 30;">
+      Don't have an account? <span>Create one now </span> 
+    </a>
+      <button class="form-content-login-button---phone" onclick="loginUniversal('processing')" ds="height: .form-btns---phone_H / 2; width: .form-btns---phone_W / 2.1;">
+        <section class="phone-login-processing-container">
+          <main ds="height: (.phone-login-processing-container_H + .phone-login-processing-container_W) / 10;
+          width: (.phone-login-processing-container_H + .phone-login-processing-container_W) / 10;">
+              <span>
+    <div class="inner-circle"></div>
+  </span>
+          </main>
+          <h1 ds="max-height: .phone-login-processing-container_H / 1.1; width: .phone-login-processing-container_W - ($t$.phone-login-processing-container@main_W * 2);
+          fs: (.phone-login-processing-container_H + .phone-login-processing-container_W) / 15;">Processing</h1>
+        </section>
+        <i ds="fs: ($t$.form-btns---phone@button_H + $t$.form-btns---phone@button_W) / 10;
+        marginR: ($t$.form-btns---phone@button_H + $t$.form-btns---phone@button_W) / 20 !i;" class="fa-solid fa-right-to-bracket"></i>
+        <span ds="fs: ($t$.form-btns---phone@button_H + $t$.form-btns---phone@button_W) / 15;">Login</span>
+      </button>
+      
+   
+
+    </section>
+    <section class="form-login-options---phone" ds="
+    height: .form-content_H - (.form-content-input--phone_H * 2 + .form-btns---phone_H);
+    width: .form-content_W / 1.1;">
+
+    <button onclick="loginGoogle()" class="form-login-options---phone-btn" ds="height: .form-login-options---phone_H / 1.5; 
+    width: .form-login-options---phone_W / 2.1;">
+      <main ds="height: $t$.form-login-options---phone@button_H / 2;
+      width: $t$.form-login-options---phone@button_W;">
+        <span ds="width: $t$.form-login-options---phone@button_W / 3; height: $t$.form-login-options---phone@button_H / 2;">
+          <img ds="width: $t$.form-login-options---phone@button@main@span_W / 2;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/768px-Google_%22G%22_logo.svg.png" alt=""></span>
+        <h1 ds="width: $t$.form-login-options---phone@button@main_W - ($t$.form-login-options---phone@button@main@span_W / 2);
+        right: $t$.form-login-options---phone@button@main@span_W / 2;
+        fs: ($t$.form-login-options---phone@button@main@h1_H + $t$.form-login-options---phone@button@main@h1_W) / 10;">Google</h1>
+      </main>
+      <h2 ds="fs: ($t$.form-login-options---phone-btn_H + $t$.form-login-options---phone-btn_W) / 20;
+      height: $t$.form-login-options---phone-btn_H - ($t$.form-login-options---phone-btn@main_H)">Login with google</h2>
+    </button>
+    <button onclick="loginFacebook()" class="form-login-options---phone-btn form-login-options---phone-btn---facebook" ds="height: .form-login-options---phone_H / 1.5; 
+    width: .form-login-options---phone_W / 2.1;">
+      <main ds="height: $t$.form-login-options---phone@button_H / 2;
+      width: $t$.form-login-options---phone@button_W;">
+        <span ds="width: $t$.form-login-options---phone@button_W / 3; height: $t$.form-login-options---phone@button_H / 2;">
+          <img ds="width: $t$.form-login-options---phone@button@main@span_W / 2;" src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Facebook_Logo_2023.png" alt=""></span>
+        <h1 ds="width: $t$.form-login-options---phone@button@main_W - ($t$.form-login-options---phone@button@main@span_W / 2);
+        right: $t$.form-login-options---phone@button@main@span_W / 2;
+        fs: ($t$.form-login-options---phone@button@main@h1_H + $t$.form-login-options---phone@button@main@h1_W) / 10;">Facebook</h1>
+      </main>
+      <h2 ds="fs: ($t$.form-login-options---phone-btn_H + $t$.form-login-options---phone-btn_W) / 20;
+      height: $t$.form-login-options---phone-btn_H - ($t$.form-login-options---phone-btn@main_H)">Login with facebook</h2>
+    </button>
+
+    </section>
+
+    </section>
+    <section class="form-img" ds="width: .form_W; height: (.form_H - .form-header_H) / 3;">
+      <img src="https://i.postimg.cc/KYWnMjmL/image-removebg-preview.png" alt="" ds="max-height: .form-img_H;" srcset="">
+    </section>
+  </section>
+</if-block>
+  
+</section>
+
+<section ds="height: .page_H; width: .page_W;" class="background-img">
+  <img ds="width: (.form_W +  .form_H) / 3; max-height: .form_H;" src="https://st2.depositphotos.com/1000460/5260/v/450/depositphotos_52600843-stock-illustration-human-model-connection.jpg" alt="">
+</section>
+
+<script src="./idk2.js"> </script>
+<script src="https://kit.fontawesome.com/93b0145054.js" crossorigin="anonymous"></script>
+</body>
+</html>
+
+<!-- 
+<reminder date="14-07-2025">
+Now design login and sign up button next to each others
+and login with google and login with facebook
+https://i.postimg.cc/GtNJth3B/Untitled.png
+https://i.postimg.cc/qq4TgXnN/blue-upscalemedia-transformed.png
+https://i.postimg.cc/GtNJth3B/Untitled.png
+
+-->

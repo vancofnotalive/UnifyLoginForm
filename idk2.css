@@ -4,7 +4,7 @@
       flex-shrink: 0 !important;
     }
 :root {
---link-color: rgb(15, 67, 136);
+  --link-color: rgb(15, 67, 136);
 }
     a {
       text-decoration: none;
